@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 
-export async function readJsonFile(path: string): Promise<any> {
+export async function readJsonFile(path: string): Promise<unknown> {
     
         const jsonString = await fs.readFile(path, "utf-8");
         console.log(jsonString);
@@ -13,6 +13,6 @@ export async function readJsonFile(path: string): Promise<any> {
             const data = JSON.parse(jsonString);
             return data;
         } catch (err) {
-            throw new Error("Malformed JSON");
+            throw new Error(err+"Malformed JSON");
         }
 }

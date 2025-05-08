@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
-import util from 'node:util';
+
 import { parseStringPromise } from "xml2js";
 
-export async function readXmlFile(path: string):Promise<any> {
+export async function readXmlFile(path: string):Promise<unknown> {
         
         const xml = await fs.readFile(path, "utf-8");
 
@@ -14,6 +14,6 @@ export async function readXmlFile(path: string):Promise<any> {
             const res = await parseStringPromise(xml, { explicitArray: false, trim: true });
             return res;
         } catch (err) {
-            throw new Error("Malformed XML");
+            throw new Error(err+"Malformed XML");
         }
 }

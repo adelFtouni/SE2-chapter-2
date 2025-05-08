@@ -6,7 +6,7 @@ export class Cake implements Item{
     getCategory():ItemCategory{
         return ItemCategory.CAKE
     }
-
+ 
 private id: string;
 private type: Type;
 private flavor: string;
