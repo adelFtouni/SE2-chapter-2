@@ -1,12 +1,25 @@
-import {readCSVFile} from "./parsers/csvParser";
-import * as path from 'path';
-async function main(){
-    const filePath = path.join(__dirname, './data','cake orders.csv');
-    
-//const data = await readCSVFile(filePath,false);
-const data = await readCSVFile("src/data/cake orders.csv");
-console.log(filePath)
-console.log(data);
+
+import { BookBuilder } from "./model/builders/book.builder";
+
+function createBook(): void {
+    const book = new BookBuilder()
+.setId("12345")
+.setBookTitle("The Great Adventure")
+.setAuthor("John Doe")
+.setGenre("Fantasy")
+.setFormat("Hardcover")
+.setLanguage("English")
+.setPublisher("Adventure Books Inc.")
+.setSpecialEdition("Signed Copy")
+.setPackaging("Gift Wrapped")
+.setPrice(29.99)
+.setQuantity(3)
+.build();
+    console.log(book);
+}
+
+async function main() {
+    createBook();
 }
 
 main();
