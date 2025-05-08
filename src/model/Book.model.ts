@@ -1,6 +1,6 @@
 import { Item, ItemCategory } from './Item.model';
 
- type Genre = 
+export type Genre = 
   | 'Science Fiction'
   | 'Thriller'
   | 'Biography'
@@ -10,23 +10,23 @@ import { Item, ItemCategory } from './Item.model';
   | 'Historical Fiction'
   | 'Non-Fiction';
 
- type Format = 
+  export type Format = 
   | 'Paperback'
   | 'Hardcover'
   | 'eBook';
 
- type Language = 
+  export type Language = 
   | 'English'
   | 'French'
   | 'Spanish'
   | 'German';
 
- type SpecialEdition = 
+  export type SpecialEdition = 
   | 'Signed Copy'
   | 'Limited Edition'
   | 'None';
 
- type Packaging = 
+export type Packaging = 
   | 'Eco-Friendly Packaging'
   | 'Standard Packaging'
   | 'Gift Wrapped';

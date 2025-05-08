@@ -8,6 +8,8 @@
         "outDir": "build",
         "sourceMap": true,
         "esModuleInterop": true,
+        "isolatedModules": false,
+       
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"],
