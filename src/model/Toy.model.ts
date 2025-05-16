@@ -1,4 +1,4 @@
-import {Item,ItemCategory} from './Item.model';
+import {Item,ItemCategory} from './IItem.model';
 
 // Enum for Toy Categories
 type Category = 'Plush' | 'Action Figures' | 'Educational' | 'Outdoor' | 'Puzzles';

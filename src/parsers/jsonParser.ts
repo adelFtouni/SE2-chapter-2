@@ -1,6 +1,7 @@
 import * as fs from 'fs/promises';
+import { DatasetRow } from '../mappers/book.mapper';
 
-export async function readJsonFile(path: string): Promise<unknown> {
+export async function readJsonFile(path: string): Promise<DatasetRow []> {
     
         const jsonString = await fs.readFile(path, "utf-8");
         console.log(jsonString);

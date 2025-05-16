@@ -1,6 +1,6 @@
-import { Item, ItemCategory } from "./Item.model";
+import { Item, ItemCategory } from "./IItem.model";
 
-type Type = 'Birthday' | 'Wedding' | 'Anniversary' | 'Graduation' | 'Baby Shower' | 'Other';
+export type Type = 'Birthday' | 'Wedding' | 'Anniversary' | 'Graduation' | 'Baby Shower' | 'Other';
 
 export class Cake implements Item{
     getCategory():ItemCategory{
@@ -12,7 +12,7 @@ private type: Type;
 private flavor: string;
 private filling: string;
 private size: string;
-private layers: string;
+private layers: number;
 private frostingType: string;
 private frostingFlavor: string;
 private decorationType: string;
@@ -22,8 +22,8 @@ private shape: string;
 private allergies: string;
 private specialIngredients: string;
 private packagingType: string;
-private price: string;
-private quantity: string;
+private price: number;
+private quantity: number;
 
 constructor(
     id: string,
@@ -31,7 +31,7 @@ constructor(
     flavor: string,
     filling: string,
     size: string,
-    layers: string,
+    layers: number,
     frostingType: string,
     frostingFlavor: string,
     decorationType: string,
@@ -41,8 +41,8 @@ constructor(
     allergies: string,
     specialIngredients: string,
     packagingType: string,
-    price: string,
-    quantity: string
+    price: number,
+    quantity: number
 ) {
     this.id = id;
     this.type = type;
@@ -83,7 +83,7 @@ getSize(): string {
     return this.size;
 }
 
-getLayers(): string {
+getLayers(): number {
     return this.layers;
 }
 
@@ -123,11 +123,11 @@ getPackagingType(): string {
     return this.packagingType;
 }
 
-getPrice(): string {
+getPrice(): number {
     return this.price;
 }
 
-getQuantity(): string {
+getQuantity(): number {
     return this.quantity;
 }
 }
