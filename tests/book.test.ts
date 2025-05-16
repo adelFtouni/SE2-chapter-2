@@ -1,5 +1,5 @@
 import { Book, Genre, Format, Language, SpecialEdition, Packaging } from '../src/model/Book.model';
-import { ItemCategory } from '../src/model/Item.model';
+import { ItemCategory } from '../src/model/IItem.model';
 
 
 
