@@ -1,4 +1,4 @@
-import { Item, ItemCategory } from './Item.model';
+import { IItem, ItemCategory } from './IItem.model';
 
 export type Genre = 
   | 'Science Fiction'
@@ -31,7 +31,7 @@ export type Packaging =
   | 'Standard Packaging'
   | 'Gift Wrapped';
 
-export class Book implements Item {
+export class Book implements IItem {
   getCategory(): ItemCategory {
     return ItemCategory.Book;
   }

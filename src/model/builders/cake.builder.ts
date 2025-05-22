@@ -19,6 +19,10 @@ private packagingType!: string;
 private price!: number;
 private quantity!: number;
 
+public static newBuilder(): CakeBuilder {
+    return new CakeBuilder();
+}
+
 public setId(id: string): CakeBuilder {
     this.id = id;
     return this;
@@ -116,7 +120,6 @@ build(): Cake {
         this.frostingFlavor,
         this.decorationType,
         this.decorationColor,
-        this.customMessage,
         this.shape,
         this.allergies,
         this.specialIngredients,
@@ -125,12 +128,12 @@ build(): Cake {
         this.quantity,
     ];
 
-    for (const property of requiredProperties) {
+    requiredProperties.forEach(property => {
         if (!property) {
-            logger.error("Could not create a cake: Missing required property");
-            throw new Error("Missing required property in CakeBuilder");
+          logger.error("missing property , could not create a cake");
+          throw new Error("missing property occurred");
         }
-    }
+      });
 
     if(this.price < 0){
         logger.error("price should be greater than zero");
