@@ -19,6 +19,10 @@ export interface DatasetRow {
 }
 
 export class BookMapper implements IMapper<DatasetRow, Book> {
+  reverseMap(data: Book): DatasetRow {
+    console.log(data);
+    throw new Error("Method not implemented.");
+  }
   map(data: DatasetRow): Book {
     return new BookBuilder()
       .setId(data['Order ID'])

@@ -23,6 +23,26 @@ export class CSVCakeMapper implements IMapper<string[], Cake> {
                .setQuantity(parseInt(data[16]))
                .build();
     }
-
+ reverseMap(data : Cake):string[]{
+     return [
+        data.getId(),
+        data.getType(),
+        data.getFlavor(),
+        data.getFilling(),
+        data.getSize(),
+        data.getLayers().toString(),
+        data.getFrostingType(),
+        data.getFrostingFlavor(),
+        data.getDecorationType(),
+        data.getDecorationColor(),
+        data.getCustomMessage(),
+        data.getShape(),
+        data.getAllergies(),
+        data.getSpecialIngredients(),
+        data.getPackagingType(),
+        data.getPrice().toString(),
+        data.getQuantity().toString()
+     ]
+}
 
 }

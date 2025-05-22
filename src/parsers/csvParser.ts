@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 import { parse as csvParse } from "csv-parse";
-
+import { stringify as csvStringify } from 'csv-stringify';
 
 /**
  * Reads a CSV file and returns its contents as a 2D array of strings
@@ -34,4 +34,21 @@ export async function readCSVFile(filePath: string, includeHeader: boolean = fal
                     resolve(records);
                 });
             });
+}
+
+export async function writeCSVFile(filePath:string,data:string[][]):Promise<void>{
+    try{
+        const csvContent = await new Promise<string>((resolve,reject)=>{
+            csvStringify(data,(err,outPut)=>{
+                if(err) reject(err)
+                resolve(outPut)
+            });
+
+        })
+        await fs.writeFile(filePath,csvContent,'utf-8')
+
+    }
+    catch(error){
+        throw new Error(`Error writing CSV file: ${error}`)
+    }
 }

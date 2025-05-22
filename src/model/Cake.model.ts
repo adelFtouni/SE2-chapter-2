@@ -1,8 +1,8 @@
-import { Item, ItemCategory } from "./IItem.model";
+import { IItem, ItemCategory } from "./IItem.model";
 
 export type Type = 'Birthday' | 'Wedding' | 'Anniversary' | 'Graduation' | 'Baby Shower' | 'Other';
 
-export class Cake implements Item{
+export class Cake implements IItem{
     getCategory():ItemCategory{
         return ItemCategory.CAKE
     }

@@ -1,4 +1,4 @@
-import {Item,ItemCategory} from './IItem.model';
+import {IItem,ItemCategory} from './IItem.model';
 
 // Enum for Toy Categories
 type Category = 'Plush' | 'Action Figures' | 'Educational' | 'Outdoor' | 'Puzzles';
@@ -10,7 +10,7 @@ type AgeGroup = '0-2 years' | '3-5 years' | '6-8 years' | '9-12 years' | '12+ ye
 type ToyType = 'Stuffed Animal' | 'Building Blocks' | 'Doll' | 'Game' | 'Vehicle';
 
 
-export class Toy implements Item{
+export class Toy implements IItem{
     getCategory():ItemCategory{
         return ItemCategory.TOY;
     }
